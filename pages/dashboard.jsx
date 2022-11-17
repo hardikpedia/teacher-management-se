@@ -108,7 +108,7 @@ function ModalForm({
   setId,
 }) {
   const postData = async () => {
-    const res = await fetch("http://localhost:3000/api/teacher", {
+    const res = await fetch("/api/teacher", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -133,7 +133,7 @@ function ModalForm({
   };
 
   const putData = async () => {
-    const res = await fetch("http://localhost:3000/api/teacher", {
+    const res = await fetch("/api/teacher", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -411,7 +411,7 @@ export default function DataTable({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch("http://localhost:3000/api/teacher");
+  const res = await fetch("/api/teacher");
   const data = await res.json();
   console.log(data);
   return {
